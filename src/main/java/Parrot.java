@@ -1,7 +1,7 @@
 public class Parrot {
 
     private ParrotTypeEnum type;
-    private int numberOfCoconuts = 0;
+    private int numberOfCoconuts;
     private double voltage;
     private boolean isNailed;
 
@@ -18,7 +18,8 @@ public class Parrot {
                 throw new RuntimeException("Sould be unreachable");
                 //return getBaseSpeed();
             case AFRICAN:
-                return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
+                throw new RuntimeException("Sould be unreachable");
+                //return Math.max(0, getBaseSpeed() - getLoadFactor() * numberOfCoconuts);
             case NORWEGIAN_BLUE:
                 return (isNailed) ? 0 : getBaseSpeed(voltage);
         }
@@ -29,7 +30,7 @@ public class Parrot {
         return Math.min(24.0, voltage * getBaseSpeed());
     }
 
-    private double getLoadFactor() {
+    double getLoadFactor() {
         return 9.0;
     }
 
@@ -37,4 +38,7 @@ public class Parrot {
         return 12.0;
     }
 
+    public int getNumberOfCoconuts() {
+        return this.numberOfCoconuts;
+    }
 }
