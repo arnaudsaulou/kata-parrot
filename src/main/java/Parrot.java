@@ -1,13 +1,11 @@
 public class Parrot {
 
-    private ParrotTypeEnum type;
-    private int numberOfCoconuts;
+    ParrotTypeEnum type;
     private double voltage;
     private boolean isNailed;
 
-    public Parrot(ParrotTypeEnum _type, int numberOfCoconuts, double voltage, boolean isNailed) {
+    public Parrot(ParrotTypeEnum _type, double voltage, boolean isNailed) {
         this.type = _type;
-        this.numberOfCoconuts = numberOfCoconuts;
         this.voltage = voltage;
         this.isNailed = isNailed;
     }
@@ -30,15 +28,8 @@ public class Parrot {
         return Math.min(24.0, voltage * getBaseSpeed());
     }
 
-    double getLoadFactor() {
-        return 9.0;
-    }
-
     double getBaseSpeed() {
         return 12.0;
     }
 
-    public int getNumberOfCoconuts() {
-        return this.numberOfCoconuts;
-    }
 }
